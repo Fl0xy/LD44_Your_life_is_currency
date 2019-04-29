@@ -7,6 +7,8 @@
 [ext_resource path="res://assets/enemys/rapid_fire_gun_ship.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/enemys/rocket_ship.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/enemys/beam_sphere.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/EnemySpawner.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,6 +19,9 @@ editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 41, 33 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="blackPixel" type="Sprite" parent="icon"]
 position = Vector2( -3, 45 )
@@ -29,16 +34,48 @@ texture = ExtResource( 3 )
 [node name="rocket_ship" parent="." instance=ExtResource( 6 )]
 
 [node name="beam_sphere" parent="." instance=ExtResource( 7 )]
+visible = false
 
+[node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 24.9121, 107.09 )
 
-<<<<<<< HEAD
-=======
 [node name="SpawnPattern" type="Node2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="EnemySpawner" parent="SpawnPattern" instance=ExtResource( 9 )]
-position = Vector2( -11, 88 )
->>>>>>> 8d4349a2b62b9640d9aca3423abd0574a2d995e5
+[node name="BeamEnemySpawner" parent="SpawnPattern" instance=ExtResource( 9 )]
+position = Vector2( 25, 78 )
+enemy_scene = ExtResource( 7 )
+
+[node name="BeamEnemySpawner7" parent="SpawnPattern" instance=ExtResource( 9 )]
+position = Vector2( 95, 49 )
+enemy_scene = ExtResource( 7 )
+
+[node name="BeamEnemySpawner6" parent="SpawnPattern" instance=ExtResource( 9 )]
+position = Vector2( 49, 78 )
+enemy_scene = ExtResource( 7 )
+
+[node name="BeamEnemySpawner8" parent="SpawnPattern" instance=ExtResource( 9 )]
+position = Vector2( 39, 95 )
+enemy_scene = ExtResource( 5 )
+
+[node name="BeamEnemySpawner9" parent="SpawnPattern" instance=ExtResource( 9 )]
+position = Vector2( 108, 110 )
+enemy_scene = ExtResource( 7 )
+
+[node name="BeamEnemySpawner2" parent="SpawnPattern" instance=ExtResource( 9 )]
+position = Vector2( -24, 50 )
+enemy_scene = ExtResource( 7 )
+
+[node name="BeamEnemySpawner3" parent="SpawnPattern" instance=ExtResource( 9 )]
+position = Vector2( -24, 72 )
+enemy_scene = ExtResource( 7 )
+
+[node name="BeamEnemySpawner4" parent="SpawnPattern" instance=ExtResource( 9 )]
+position = Vector2( -24, 95 )
+enemy_scene = ExtResource( 7 )
+
+[node name="BeamEnemySpawner5" parent="SpawnPattern" instance=ExtResource( 9 )]
+position = Vector2( -24, 121 )
+enemy_scene = ExtResource( 7 )

@@ -16,7 +16,7 @@ var frequency : float = 3.0
 var time : float
 
 func _physics_process(delta):
-	target_pos = global.player.position#gamejam
+	target_pos = global.player.get_global_position()#gamejam
 	
 	#constant movement on y
 	time = fmod(time + delta, (2*PI*frequency)) # (2*PI*frequency) sin() repeats
@@ -25,18 +25,18 @@ func _physics_process(delta):
 	#movement on x
 	if current_mode == MODE.search :
 		var movement_distance = movement_speed * delta
-		var distance_to_target = abs(movement_distance - (target_pos.x - position.x))
+		var distance_to_target = abs(target_pos.x - get_global_position().x)# dumm? villeicht? abs(movement_distance - (target_pos.x - position.x))
 		if distance_to_target <= movement_distance :
 				movement_distance = distance_to_target
 				current_mode = MODE.fire
 				
-		if position.x < target_pos.x :
+		if get_global_position().x < target_pos.x :
 			#movement_distance *= 1 #wouldn't do anything
 			pass
 		else:
 			movement_distance *= -1
 		
-		position.x += movement_distance
+		set_global_position(Vector2(get_global_position().x + movement_distance, get_global_position().y))
 	elif current_mode == MODE.fire :
 		fire_beam()
 	elif current_mode == MODE.stand :
