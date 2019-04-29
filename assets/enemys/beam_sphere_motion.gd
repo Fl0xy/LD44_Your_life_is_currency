@@ -15,7 +15,7 @@ var frequency : float = 3.0
 var time : float
 
 func _physics_process(delta):
-	#movement on y
+	#constant movement on y
 	time = fmod(time + delta, (2*PI*frequency)) # (2*PI*frequency) sin() repeats
 	position.y = (sin(frequency * time) * aplitude)
 	
@@ -40,5 +40,4 @@ func _physics_process(delta):
 		position.x += movement_speed * delta
 	
 func fire_beam():
-	$ship_body/projectile/beam.visible = true
-	$ship_body/projectile/beam.set_physics_process(true)
+	$ship_body/projectile.fire_beam()
