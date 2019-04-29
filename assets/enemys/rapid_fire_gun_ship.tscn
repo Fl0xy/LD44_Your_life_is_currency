@@ -13,30 +13,30 @@ atlas = ExtResource( 2 )
 region = Rect2( 24, 0, 6, 5 )
 filter_clip = true
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
 region = Rect2( 24, 6, 6, 5 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
 region = Rect2( 24, 12, 7, 11 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
 region = Rect2( 32, 12, 7, 11 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
 region = Rect2( 31, 0, 9, 11 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
 region = Rect2( 41, 0, 9, 12 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 7, 9 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 2, 2 )
 
 [node name="rapid_fire_gun_ship" type="Node2D"]
@@ -66,7 +66,7 @@ texture = SubResource( 2 )
 [node name="left" type="Sprite" parent="ship_body/thrust"]
 position = Vector2( -14, -5 )
 scale = Vector2( -1, 1 )
-texture = SubResource( 9 )
+texture = SubResource( 3 )
 offset = Vector2( 0.5, 0 )
 
 [node name="back_right" type="Sprite" parent="ship_body/thrust"]
@@ -74,7 +74,7 @@ position = Vector2( 6.5, -12 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 z_index = -1
-texture = SubResource( 3 )
+texture = SubResource( 4 )
 offset = Vector2( 0.5, 0 )
 
 [node name="back_left" type="Sprite" parent="ship_body/thrust"]
@@ -82,7 +82,7 @@ position = Vector2( -5.5, -12 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 z_index = -1
-texture = SubResource( 7 )
+texture = SubResource( 5 )
 offset = Vector2( 0.5, 0 )
 
 [node name="muzzleflash" type="Node2D" parent="ship_body"]
@@ -93,7 +93,7 @@ position = Vector2( -3.5, 15 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 z_index = 1
-texture = SubResource( 4 )
+texture = SubResource( 6 )
 offset = Vector2( 0.5, 0 )
 
 [node name="right" type="Sprite" parent="ship_body/muzzleflash"]
@@ -102,7 +102,7 @@ position = Vector2( 4, 15.5 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 z_index = 1
-texture = SubResource( 8 )
+texture = SubResource( 7 )
 
 [node name="projectile" type="Node2D" parent="ship_body"]
 
@@ -126,12 +126,12 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, 2 )
-shape = SubResource( 5 )
+shape = SubResource( 8 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -9, -5 )
-shape = SubResource( 6 )
+shape = SubResource( 9 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 9, -5 )
-shape = SubResource( 6 )
+shape = SubResource( 9 )
