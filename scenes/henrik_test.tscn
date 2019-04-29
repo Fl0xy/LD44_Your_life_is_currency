@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/deathzone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://assets/enemys/rapid_fire_gun_ship.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/enemys/rocket_ship.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/enemys/beam_sphere.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scripts/continues_motion_2D.gd" type="Script" id=8]
+[ext_resource path="res://scenes/EnemySpawner.gd" type="Script" id=8]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,12 +27,14 @@ texture = ExtResource( 3 )
 [node name="ProjectileSpawner" parent="." instance=ExtResource( 4 )]
 
 [node name="rapid_fire_gun_ship" parent="." instance=ExtResource( 5 )]
-visible = false
 
 [node name="rocket_ship" parent="." instance=ExtResource( 6 )]
-visible = false
 
 [node name="beam_sphere" parent="." instance=ExtResource( 7 )]
 
-[node name="enemyspawner" type="Node2D" parent="."]
+[node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource( 8 )
+enemy_scene = ExtResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( 24.9121, 107.09 )

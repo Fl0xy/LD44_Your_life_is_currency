@@ -55,8 +55,7 @@ stream = ExtResource( 4 )
 volume_db = -16.129
 
 [node name="Area2D" type="Area2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 3 )
-
+[connection signal="area_entered" from="Area2D" to="ship_body" method="_on_Area2D_area_entered"]

@@ -39,3 +39,9 @@ func _physics_process(delta):
 #		var instance = bullet.instance()
 #		instance.set_global_position($ship_body/projectile/spawn_left.get_global_position())
 #		get_parent().add_child(instance)
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("blackProjectile"):
+		#destroy yourself
+		get_parent().queue_free()
+	
