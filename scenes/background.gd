@@ -1,23 +1,34 @@
 extends Node2D
 
+export var speedFactor: float = 1
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
-const defVector: Vector2 = Vector2(0,10)
+var defVectorY: float = 10.0
+var w2
+var w3
+var w4
+var g1
+var g2
+var g3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#$ParallaxBackground/ParallaxLayer.motion_offset = Vector2(0,1)
-	#$ParallaxBackground/ParallaxLayer.motion_scale = Vector2(1,10)
+	w2 = $ParallaxBackground/W2
+	w3 = $ParallaxBackground/W3
+	w4 = $ParallaxBackground/W4
+	
+	g1 = $ParallaxBackground/G1
+	g2 = $ParallaxBackground/G2
+	g3 = $ParallaxBackground/G3
 	pass
 
 func _process(delta):
-	$ParallaxBackground/W1.motion_offset.y = fmod($ParallaxBackground/W1.motion_offset.y + defVector.y, 192)
-	$ParallaxBackground/W2.motion_offset.y = fmod($ParallaxBackground/W2.motion_offset.y + defVector.y + 2, 192)
-	$ParallaxBackground/W3.motion_offset.y = fmod($ParallaxBackground/W3.motion_offset.y + defVector.y + 5, 192)
-	$ParallaxBackground/W4.motion_offset.y = fmod($ParallaxBackground/W4.motion_offset.y + defVector.y + 7, 192)
-	
-	$ParallaxBackground/G1.motion_offset.y = fmod($ParallaxBackground/G1.motion_offset.y + defVector.y + 9, 192)
-	$ParallaxBackground/G2.motion_offset.y = fmod($ParallaxBackground/G2.motion_offset.y + defVector.y + 11, 192)
-	$ParallaxBackground/G3.motion_offset.y = fmod($ParallaxBackground/G3.motion_offset.y + defVector.y + 13, 192)
+	w2.motion_offset.y = fmod(w2.motion_offset.y + (defVectorY + 2)* speedFactor, 192)
+	w3.motion_offset.y = fmod(w3.motion_offset.y + (defVectorY + 5)* speedFactor, 192)
+	w4.motion_offset.y = fmod(w4.motion_offset.y + (defVectorY + 7)* speedFactor, 192)
+
+	g1.motion_offset.y = fmod(g1.motion_offset.y + (defVectorY + 9)* speedFactor, 192)
+	g2.motion_offset.y = fmod(g2.motion_offset.y + (defVectorY + 11)* speedFactor, 192)
+	g3.motion_offset.y = fmod(g3.motion_offset.y + (defVectorY + 13)* speedFactor, 192)

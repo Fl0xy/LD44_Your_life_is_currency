@@ -42,8 +42,8 @@ func _physics_process(delta):
 		velocity.y += 1
 	if Input.is_action_just_pressed('fire'):
 		if prodjectiles.size() != 0:
-			$AudioStreamPlayer.play()
 			var proj = prodjectiles.pop_front()
+			$AudioStreamPlayer.play()
 			check_Gameover()
 			proj.fire()
 			remove_child(proj)

@@ -27,6 +27,7 @@ func _physics_process(delta):
 			instance.set_global_position($projectile/spawn_right.get_global_position())
 			$muzzleflash/right.visible = true
 			side = (side + 1) % GUN_COUNT
+		$sound.play()
 		get_parent().get_parent().add_child(instance)
 		
 		time -= time_between_shoots
