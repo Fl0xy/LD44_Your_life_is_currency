@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://scenes/gameOver.gd" type="Script" id=1]
 [ext_resource path="res://assets/Connection.otf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
@@ -28,17 +28,17 @@ text = "Game Over"
 scroll_active = false
 
 [node name="Button" type="Button" parent="."]
-margin_left = 28.0
+margin_left = 21.0
 margin_top = 108.0
-margin_right = 88.0
+margin_right = 91.0
 margin_bottom = 133.0
 custom_fonts/font = SubResource( 2 )
 text = "Exit"
 
 [node name="Button2" type="Button" parent="."]
-margin_left = 28.0
+margin_left = 21.0
 margin_top = 75.0
-margin_right = 88.0
+margin_right = 91.0
 margin_bottom = 100.0
 custom_fonts/font = SubResource( 3 )
 text = "Again"

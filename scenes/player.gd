@@ -44,6 +44,7 @@ func _physics_process(delta):
 		if prodjectiles.size() != 0:
 			$AudioStreamPlayer.play()
 			var proj = prodjectiles.pop_front()
+			check_Gameover()
 			proj.fire()
 			remove_child(proj)
 			get_parent().add_child(proj)
@@ -51,3 +52,7 @@ func _physics_process(delta):
 	velocity = get_global_position() + velocity
 	if velocity.x > minX && velocity.x < maxX && velocity.y > minY && velocity.y < maxY:
 		set_global_position(velocity)
+		
+func check_Gameover():
+	if prodjectiles.size() == 0:
+		get_tree().change_scene("res://scenes/gameOver.tscn")
