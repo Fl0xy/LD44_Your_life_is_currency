@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scenes/backgroundTest.gd" type="Script" id=1]
+[ext_resource path="res://scenes/background.gd" type="Script" id=1]
 [ext_resource path="res://assets/G_Water1.png" type="Texture" id=2]
 [ext_resource path="res://assets/G_Water2.png" type="Texture" id=3]
 [ext_resource path="res://assets/G_Water3.png" type="Texture" id=4]
@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/G_Mud.png" type="Texture" id=6]
 [ext_resource path="res://assets/G_Dirt.png" type="Texture" id=7]
 [ext_resource path="res://assets/G_Grass.png" type="Texture" id=8]
-[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -64,7 +63,4 @@ motion_mirroring = Vector2( 0, 192 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/G3"]
 position = Vector2( 56.5, 96 )
 texture = ExtResource( 8 )
-
-[node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 54.7059, 168.059 )
 
