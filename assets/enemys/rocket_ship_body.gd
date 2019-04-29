@@ -16,6 +16,9 @@ func fire_rocket():
 	timer.start(rocket_intervall)
 	
 	var instance = rocket.instance()
+	
+	instance.target_global_position = global.player.get_global_position() #gamejam temporäre lösung
+	
 	instance.set_global_position($projectile/spawn.get_global_position())
 	get_parent().get_parent().add_child(instance)
 

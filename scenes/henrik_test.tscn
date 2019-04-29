@@ -7,8 +7,6 @@
 [ext_resource path="res://assets/enemys/rapid_fire_gun_ship.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/enemys/rocket_ship.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/enemys/beam_sphere.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/EnemySpawner.gd" type="Script" id=8]
-[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="Node2D"]
 
@@ -32,10 +30,15 @@ texture = ExtResource( 3 )
 
 [node name="beam_sphere" parent="." instance=ExtResource( 7 )]
 
-[node name="EnemySpawner" type="Node2D" parent="."]
-script = ExtResource( 8 )
-enemy_scene = ExtResource( 6 )
-
-[node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 24.9121, 107.09 )
 
+<<<<<<< HEAD
+=======
+[node name="SpawnPattern" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EnemySpawner" parent="SpawnPattern" instance=ExtResource( 9 )]
+position = Vector2( -11, 88 )
+>>>>>>> 8d4349a2b62b9640d9aca3423abd0574a2d995e5
