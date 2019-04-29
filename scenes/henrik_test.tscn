@@ -38,3 +38,4 @@ enemy_scene = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 24.9121, 107.09 )
+

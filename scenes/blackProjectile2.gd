@@ -5,6 +5,7 @@ const ProjSpeed: int = 3
 export var radius : float
 export var rodationSpeed : float
 
+var player
 var x: float
 var f1: float
 var f2: float
@@ -30,3 +31,11 @@ func fire():
 	firingPosition = get_parent().get_global_position();
 	is_fired = true
 	visible = false
+
+func _on_Area2D_area_entered(area):
+	if !area.is_in_group("blackProjectile"):
+		player.removeProjectile(self)
+		queue_free()
+
+func set_Player(playr):
+	player = playr

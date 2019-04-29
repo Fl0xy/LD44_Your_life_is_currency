@@ -4,9 +4,9 @@ export var disableControls: bool = false
 
 const PROJECTILE : Resource = preload("res://scenes/blackProjectile2.tscn")
 const speed : float = 1.5
-const maxX : int = 113 -2
+const maxX : int = 113 - 2
 const minX : int = 2
-const maxY : int = 192 -2
+const maxY : int = 192 - 2
 const minY : int = 2
 
 var prodjectiles = []
@@ -26,6 +26,7 @@ func _ready():
 			speed *= -1
 		tmpProj.radius = radius
 		tmpProj.rodationSpeed = speed
+		tmpProj.player = self
 		prodjectiles.push_front(tmpProj)
 
 func _physics_process(delta):
@@ -64,5 +65,8 @@ func get_remaining_Projectiles():
 	return prodjectiles.size()
 
 func removeProjectile(proj):
-	prodjectiles.erase(proj)
-	global.playerProjectilesCount -= 1
+	var index: int = prodjectiles.find(proj)
+	if index != -1:
+		print("found")
+		prodjectiles.remove(index)
+		global.playerProjectilesCount -= 1
