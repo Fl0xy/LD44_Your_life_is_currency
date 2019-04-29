@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/continues_motion_2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/entity_texture_atlas.png" type="Texture" id=2]
+[ext_resource path="res://assets/enemys/rocket.tscn" type="PackedScene" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 65, 13, 20 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 14, 65, 11, 8 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 6, 10 )
+
+[node name="rocket_ship" type="Node2D"]
+script = ExtResource( 1 )
+direction = Vector2( 0, 1 )
+speed = 10.0
+
+[node name="ship_body" type="Sprite" parent="."]
+texture = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="thrust" type="Node2D" parent="ship_body"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="back" type="Sprite" parent="ship_body/thrust"]
+position = Vector2( 0, -14 )
+texture = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="projectile" type="Node2D" parent="ship_body"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="rocket" parent="ship_body/projectile" instance=ExtResource( 3 )]
+
+[node name="spawn" type="Node2D" parent="ship_body/projectile"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 5 )

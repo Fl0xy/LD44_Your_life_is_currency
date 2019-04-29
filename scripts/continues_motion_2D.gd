@@ -4,7 +4,7 @@ export var direction : Vector2
 export var speed : float
 export var rotation_speed : float
 
-export var aplitude : float = 1.0
+export var aplitude : float = 0.0
 export var phase : float = 0.0
 export var frequency : float = 1.0
 export var vertical_shift : float = 0.0
