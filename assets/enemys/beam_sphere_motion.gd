@@ -45,3 +45,8 @@ func _physics_process(delta):
 func fire_beam():
 	$ship_body/projectile.fire_beam()
 	current_mode = MODE.stand
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("blackProjectile"):
+		#destroy
+		queue_free()

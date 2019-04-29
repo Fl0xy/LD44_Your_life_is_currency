@@ -18,3 +18,8 @@ func fire_rocket():
 	var instance = rocket.instance()
 	instance.set_global_position($projectile/spawn.get_global_position())
 	get_parent().get_parent().add_child(instance)
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("blackProjectile"):
+		#destroy
+		get_parent().queue_free()

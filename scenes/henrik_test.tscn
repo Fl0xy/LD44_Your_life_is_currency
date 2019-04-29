@@ -29,10 +29,8 @@ texture = ExtResource( 3 )
 [node name="rapid_fire_gun_ship" parent="." instance=ExtResource( 5 )]
 
 [node name="rocket_ship" parent="." instance=ExtResource( 6 )]
-visible = false
 
 [node name="beam_sphere" parent="." instance=ExtResource( 7 )]
-visible = false
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource( 8 )
