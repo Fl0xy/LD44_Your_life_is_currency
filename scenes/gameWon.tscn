@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/gameWon.gd" type="Script" id=1]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Connection.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/background.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 56, 140 )
+disableControls = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 8.0
+margin_top = 43.0748
+margin_right = 107.0
+margin_bottom = 57.0748
+custom_fonts/normal_font = SubResource( 1 )
+text = "Drones survived"
+scroll_active = false
+
+[node name="textProjCount" type="RichTextLabel" parent="."]
+margin_left = 43.8743
+margin_top = 15.0374
+margin_right = 67.8743
+margin_bottom = 34.0374
+custom_fonts/normal_font = SubResource( 2 )
+text = "00"
+scroll_active = false
+
+[node name="Node2D" parent="." instance=ExtResource( 4 )]
+speedFactor = 0.001
+

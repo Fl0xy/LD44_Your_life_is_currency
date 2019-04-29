@@ -19,6 +19,10 @@ config/name="Your_life_is_currency"
 run/main_scene="res://scenes/start.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+global="*res://scripts/global.gd"
+
 [display]
 
 window/size/width=113
