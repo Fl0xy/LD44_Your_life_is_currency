@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/continues_motion_2D.gd" type="Script" id=1]
 [ext_resource path="res://assets/entity_texture_atlas.png" type="Texture" id=2]
+[ext_resource path="res://assets/enemys/rocket_ship_body.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -21,6 +22,7 @@ speed = 10.0
 
 [node name="ship_body" type="Sprite" parent="."]
 texture = SubResource( 1 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -52,4 +54,3 @@ editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 3 )
-
