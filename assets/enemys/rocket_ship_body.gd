@@ -12,6 +12,7 @@ func _ready():
 	timer.start(rocket_intervall)
 
 func fire_rocket():
+	$audioFire.play()
 	timer.start(rocket_intervall)
 	
 	var instance = rocket.instance()
