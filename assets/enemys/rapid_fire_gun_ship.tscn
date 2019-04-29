@@ -45,7 +45,6 @@ direction = Vector2( 1, 0.5 )
 speed = 20.0
 
 [node name="ship_body" type="Sprite" parent="."]
-editor/display_folded = true
 texture = SubResource( 1 )
 script = ExtResource( 3 )
 __meta__ = {
