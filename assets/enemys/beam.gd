@@ -19,6 +19,7 @@ func fire_beam():
 	set_timer(0.01, "laser_cast")
 
 func laser_cast():
+	$audioLaserCast.play()
 	timer.queue_free()
 	
 	$laser_cast.visible = true
@@ -26,6 +27,7 @@ func laser_cast():
 	set_timer(2, "full_beam")
 
 func full_beam():
+	$audioLaserBeam.play()
 	timer.queue_free()
 	
 	$laser_cast.visible = false
@@ -33,7 +35,7 @@ func full_beam():
 	$beam.visible = true
 	set_physics_process(true)
 	
-	set_timer(1, "no_beam")
+	set_timer(2, "no_beam")
 
 func no_beam():
 	timer.queue_free()
