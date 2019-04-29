@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/enemys/beam_sphere_motion.gd" type="Script" id=1]
 [ext_resource path="res://assets/entity_texture_atlas.png" type="Texture" id=2]
 [ext_resource path="res://assets/enemys/beam.gd" type="Script" id=3]
 [ext_resource path="res://assets/enemys/beam.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/whitePixel.png" type="Texture" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -53,6 +54,13 @@ texture = SubResource( 3 )
 script = ExtResource( 3 )
 
 [node name="beam" parent="ship_body/projectile" instance=ExtResource( 4 )]
+
+[node name="laser_cast" type="Sprite" parent="ship_body/projectile"]
+modulate = Color( 0.447059, 0.772549, 0.341176, 0.317647 )
+position = Vector2( 0, 2.5 )
+scale = Vector2( 2.5, 148.5 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
 editor/display_folded = true

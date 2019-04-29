@@ -6,7 +6,8 @@ export var movement_speed = 20.0
 enum MODE {
 	search,
 	fire,
-	flee
+	flee,
+	stand
 }
 var current_mode = MODE.search
 
@@ -36,8 +37,11 @@ func _physics_process(delta):
 		position.x += movement_distance
 	elif current_mode == MODE.fire :
 		fire_beam()
+	elif current_mode == MODE.stand :
+		pass
 	elif current_mode == MODE.flee :
 		position.x += movement_speed * delta
 	
 func fire_beam():
 	$ship_body/projectile.fire_beam()
+	current_mode = MODE.stand
