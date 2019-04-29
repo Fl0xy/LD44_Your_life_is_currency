@@ -7,6 +7,7 @@ export var turning_speed = 1.0
 var heading = Vector2(0, 1)
 
 func _physics_process(delta):
+	target_global_position = global.player.position# gamejam
 	var to_target = target_global_position - position 
 	
 	var tmp_turning_speed = turning_speed * delta

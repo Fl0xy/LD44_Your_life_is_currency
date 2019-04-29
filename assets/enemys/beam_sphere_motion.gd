@@ -16,6 +16,8 @@ var frequency : float = 3.0
 var time : float
 
 func _physics_process(delta):
+	target_pos = global.player.position#gamejam
+	
 	#constant movement on y
 	time = fmod(time + delta, (2*PI*frequency)) # (2*PI*frequency) sin() repeats
 	position.y = (sin(frequency * time) * aplitude)

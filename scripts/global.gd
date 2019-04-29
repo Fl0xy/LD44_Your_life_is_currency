@@ -2,6 +2,8 @@ extends Node
 
 var playerProjectilesCount = 0
 
+var player
+
 func GameOver():
 	get_tree().change_scene("res://scenes/gameOver.tscn")
 	

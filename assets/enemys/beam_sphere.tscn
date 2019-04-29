@@ -25,6 +25,9 @@ radius = 7.07107
 
 [node name="beam_sphere" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="ship_body" type="Sprite" parent="."]
 texture = SubResource( 1 )
@@ -73,7 +76,6 @@ stream = ExtResource( 7 )
 volume_db = -11.66
 
 [node name="Area2D" type="Area2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 4 )

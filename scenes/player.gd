@@ -13,6 +13,7 @@ var prodjectiles = []
 var velocity: Vector2
 
 func _ready():
+	global.player = self
 	var radius: float = 4
 	var speed: float = 10
 	var tmpProj
