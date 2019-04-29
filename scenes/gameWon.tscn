@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/gameWon.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,12 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
@@ -44,4 +50,13 @@ scroll_active = false
 
 [node name="Node2D" parent="." instance=ExtResource( 4 )]
 speedFactor = 0.001
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 8.0
+margin_top = 168.943
+margin_right = 104.0
+margin_bottom = 182.943
+custom_fonts/normal_font = SubResource( 3 )
+text = "Thanks for Playing"
+scroll_active = false
 
