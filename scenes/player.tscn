@@ -20,7 +20,7 @@ visible = false
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="whitePixel" type="Sprite" parent="Area2D"]
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
 texture = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
