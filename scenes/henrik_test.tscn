@@ -8,23 +8,23 @@
 [ext_resource path="res://assets/entity_texture_atlas.png" type="Texture" id=6]
 [ext_resource path="res://scripts/continues_motion_2D.gd" type="Script" id=7]
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 25, 15, 15 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 6 )
 region = Rect2( 21, 25, 3, 5 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 6 )
 region = Rect2( 16, 25, 4, 3 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 41, 15, 10 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 6 )
 region = Rect2( 16, 37, 15, 26 )
 
@@ -53,7 +53,7 @@ visible = false
 
 [node name="ship_body" type="Sprite" parent="beam_sphere"]
 editor/display_folded = true
-texture = SubResource( 5 )
+texture = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -66,7 +66,7 @@ __meta__ = {
 
 [node name="back_left" type="Sprite" parent="beam_sphere/ship_body/thrust"]
 position = Vector2( -3, -9 )
-texture = SubResource( 6 )
+texture = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -74,7 +74,7 @@ __meta__ = {
 [node name="back_right" type="Sprite" parent="beam_sphere/ship_body/thrust"]
 position = Vector2( 3, -9 )
 scale = Vector2( -1, 1 )
-texture = SubResource( 6 )
+texture = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -82,14 +82,14 @@ __meta__ = {
 [node name="right" type="Sprite" parent="beam_sphere/ship_body/thrust"]
 position = Vector2( 9.5, -1 )
 scale = Vector2( -1, 1 )
-texture = SubResource( 7 )
+texture = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="left" type="Sprite" parent="beam_sphere/ship_body/thrust"]
 position = Vector2( -9.5, -1 )
-texture = SubResource( 7 )
+texture = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -109,63 +109,63 @@ __meta__ = {
 
 [node name="beam_start" type="Sprite" parent="beam_sphere/ship_body/projectile/beam"]
 position = Vector2( 0, 5.5 )
-texture = SubResource( 8 )
+texture = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="beam_chunk" type="Sprite" parent="beam_sphere/ship_body/projectile/beam"]
 position = Vector2( 0, 23 )
-texture = SubResource( 9 )
+texture = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="beam_chunk2" type="Sprite" parent="beam_sphere/ship_body/projectile/beam"]
 position = Vector2( 0, 49 )
-texture = SubResource( 9 )
+texture = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="beam_chunk3" type="Sprite" parent="beam_sphere/ship_body/projectile/beam"]
 position = Vector2( 0, 74 )
-texture = SubResource( 9 )
+texture = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="beam_chunk4" type="Sprite" parent="beam_sphere/ship_body/projectile/beam"]
 position = Vector2( 0, 100 )
-texture = SubResource( 9 )
+texture = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="beam_chunk5" type="Sprite" parent="beam_sphere/ship_body/projectile/beam"]
 position = Vector2( 0, 126 )
-texture = SubResource( 9 )
+texture = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="beam_chunk6" type="Sprite" parent="beam_sphere/ship_body/projectile/beam"]
 position = Vector2( 0, 152 )
-texture = SubResource( 9 )
+texture = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="beam_chunk7" type="Sprite" parent="beam_sphere/ship_body/projectile/beam"]
 position = Vector2( 0, 178 )
-texture = SubResource( 9 )
+texture = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="beam_chunk8" type="Sprite" parent="beam_sphere/ship_body/projectile/beam"]
 position = Vector2( 0, 204 )
-texture = SubResource( 9 )
+texture = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
