@@ -52,3 +52,4 @@ position = Vector2( 0, 179 )
 
 [node name="beam_chunk8" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 205 )
+

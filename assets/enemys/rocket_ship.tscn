@@ -52,10 +52,11 @@ __meta__ = {
 
 [node name="audioFire" type="AudioStreamPlayer" parent="ship_body"]
 stream = ExtResource( 4 )
-volume_db = -16.129
+volume_db = -25.584
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 3 )
+
 [connection signal="area_entered" from="Area2D" to="ship_body" method="_on_Area2D_area_entered"]

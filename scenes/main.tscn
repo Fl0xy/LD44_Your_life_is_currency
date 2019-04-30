@@ -46,6 +46,7 @@ enemy_scene = ExtResource( 6 )
 direction = Vector2( 1, 0 )
 
 [node name="Timer" type="Timer" parent="waves/wave1"]
+wait_time = 5.0
 one_shot = true
 autostart = true
 
@@ -57,10 +58,12 @@ script = ExtResource( 4 )
 [node name="EnemySpawnerGS6" parent="waves/wave2/wave" instance=ExtResource( 5 )]
 position = Vector2( -32.259, -3.70975 )
 enemy_scene = ExtResource( 6 )
+direction = Vector2( 3, 0 )
 
 [node name="EnemySpawnerGS5" parent="waves/wave2/wave" instance=ExtResource( 5 )]
 position = Vector2( -43.5827, 13.4375 )
 enemy_scene = ExtResource( 6 )
+direction = Vector2( 2, 0 )
 
 [node name="EnemySpawnerL" parent="waves/wave2/wave" instance=ExtResource( 5 )]
 position = Vector2( -50.1476, 18.7354 )
@@ -71,8 +74,12 @@ position = Vector2( -35.9417, 32.0298 )
 enemy_scene = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="waves/wave2"]
+wait_time = 10.0
+one_shot = true
+autostart = true
 
 [node name="wave3" type="Node2D" parent="waves"]
+script = ExtResource( 4 )
 
 [node name="wave" type="Node2D" parent="waves/wave3"]
 
@@ -81,29 +88,39 @@ position = Vector2( -50.1476, 18.7354 )
 enemy_scene = ExtResource( 7 )
 
 [node name="EnemySpawnerR" parent="waves/wave3/wave" instance=ExtResource( 5 )]
-position = Vector2( -24.618, 17.1473 )
+position = Vector2( 101.56, -61.7948 )
 enemy_scene = ExtResource( 8 )
+
+[node name="EnemySpawnerR2" parent="waves/wave3/wave" instance=ExtResource( 5 )]
+position = Vector2( 101.56, -61.7948 )
+enemy_scene = ExtResource( 8 )
+direction = Vector2( 0, 2 )
+
+[node name="EnemySpawnerR3" parent="waves/wave3/wave" instance=ExtResource( 5 )]
+position = Vector2( 40.4121, -58.883 )
+enemy_scene = ExtResource( 8 )
+direction = Vector2( 0, 2 )
+
+[node name="EnemySpawnerR4" parent="waves/wave3/wave" instance=ExtResource( 5 )]
+position = Vector2( 83.7655, -59.2065 )
+enemy_scene = ExtResource( 8 )
+direction = Vector2( 0, 2 )
 
 [node name="EnemySpawnerGS7" parent="waves/wave3/wave" instance=ExtResource( 5 )]
 position = Vector2( -43.5827, 13.4375 )
 enemy_scene = ExtResource( 6 )
+direction = Vector2( 2, 0 )
+
+[node name="EnemySpawnerGS8" parent="waves/wave3/wave" instance=ExtResource( 5 )]
+position = Vector2( 149.89, 18.614 )
+enemy_scene = ExtResource( 6 )
+direction = Vector2( -2, 0 )
 
 [node name="Timer" type="Timer" parent="waves/wave3"]
-
-[node name="wave4" type="Node2D" parent="waves"]
-
-[node name="wave" type="Node2D" parent="waves/wave4"]
-
-[node name="Timer" type="Timer" parent="waves/wave4"]
-
-[node name="wave5" type="Node2D" parent="waves"]
-
-[node name="wave" type="Node2D" parent="waves/wave5"]
-
-[node name="Timer" type="Timer" parent="waves/wave5"]
+wait_time = 15.0
+one_shot = true
+autostart = true
 
 [connection signal="timeout" from="waves/wave1/Timer" to="waves/wave1" method="_on_Timer_timeout"]
 [connection signal="timeout" from="waves/wave2/Timer" to="waves/wave2" method="_on_Timer_timeout"]
-[connection signal="timeout" from="waves/wave3/Timer" to="waves/wave2" method="_on_Timer_timeout"]
-[connection signal="timeout" from="waves/wave4/Timer" to="waves/wave2" method="_on_Timer_timeout"]
-[connection signal="timeout" from="waves/wave5/Timer" to="waves/wave2" method="_on_Timer_timeout"]
+[connection signal="timeout" from="waves/wave3/Timer" to="waves/wave3" method="_on_Timer_timeout"]

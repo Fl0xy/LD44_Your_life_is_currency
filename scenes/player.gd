@@ -71,3 +71,4 @@ func removeProjectile(proj):
 		print("found")
 		prodjectiles.remove(index)
 		global.playerProjectilesCount -= 1
+		check_Gameover()
