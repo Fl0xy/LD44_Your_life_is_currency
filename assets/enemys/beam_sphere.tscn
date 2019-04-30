@@ -36,6 +36,7 @@ __meta__ = {
 }
 
 [node name="thrust" type="Node2D" parent="ship_body"]
+editor/display_folded = true
 
 [node name="back_left" type="Sprite" parent="ship_body/thrust"]
 position = Vector2( -3, -9 )

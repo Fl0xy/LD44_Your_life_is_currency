@@ -4,10 +4,19 @@ var timer : Timer
 
 func _ready():
 	$beam.visible = false
-	$beam.set_physics_process(false)
-	
+	physics(false)
 	$laser_cast.visible = false
 	
+func physics(input : bool):
+	$beam/beam_chunk/Area2D/CollisionShape2D.disabled = input
+	$beam/beam_chunk2/Area2D/CollisionShape2D.disabled = input
+	$beam/beam_chunk3/Area2D/CollisionShape2D.disabled = input
+	$beam/beam_chunk4/Area2D/CollisionShape2D.disabled = input
+	$beam/beam_chunk5/Area2D/CollisionShape2D.disabled = input
+	$beam/beam_chunk6/Area2D/CollisionShape2D.disabled = input
+	$beam/beam_chunk7/Area2D/CollisionShape2D.disabled = input
+	$beam/beam_chunk8/Area2D/CollisionShape2D.disabled = input
+
 
 func set_timer(wait_time : float, function_name):
 	timer = Timer.new()
@@ -33,7 +42,7 @@ func full_beam():
 	$laser_cast.visible = false
 	
 	$beam.visible = true
-	set_physics_process(true)
+	physics(true)
 	
 	set_timer(2, "no_beam")
 
@@ -41,7 +50,7 @@ func no_beam():
 	timer.queue_free()
 	
 	visible = false
-	set_physics_process(false)
+	physics(false)
 	
 	var beam_sphere = get_parent().get_parent()
 	beam_sphere.current_mode = beam_sphere.MODE.flee

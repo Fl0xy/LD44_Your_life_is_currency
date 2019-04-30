@@ -2,6 +2,8 @@ extends Node2D
 
 export var target_pos : Vector2 = Vector2(50,50)
 export var movement_speed = 20.0
+export var direction : Vector2 #dirty hack
+
 
 enum MODE {
 	search,
