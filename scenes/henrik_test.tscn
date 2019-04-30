@@ -79,3 +79,4 @@ enemy_scene = ExtResource( 7 )
 [node name="BeamEnemySpawner5" parent="SpawnPattern" instance=ExtResource( 9 )]
 position = Vector2( -24, 121 )
 enemy_scene = ExtResource( 7 )
+

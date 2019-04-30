@@ -34,6 +34,7 @@ func fire():
 
 func _on_Area2D_area_entered(area):
 	if !area.is_in_group("blackProjectile"):
+		print(area)
 		player.removeProjectile(self)
 		queue_free()
 
