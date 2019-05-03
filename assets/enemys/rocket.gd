@@ -8,7 +8,7 @@ var heading = Vector2(0, 1)
 
 func _physics_process(delta):
 	target_global_position = global.player.position# gamejam
-	var to_target = target_global_position - position 
+	var to_target = target_global_position - global_position
 	
 	var tmp_turning_speed = turning_speed * delta
 	var turn_by = heading.angle_to(to_target) #distance to turn
@@ -21,5 +21,4 @@ func _physics_process(delta):
 	rotation_degrees += turn_by * 180/PI
 	heading = heading.rotated(turn_by)
 	
-	position += heading * delta * speed
-	
+	global_position += heading * delta * speed
