@@ -19,6 +19,8 @@ func _physics_process(delta):
 	time += delta
 	if time > time_between_shoots :
 		var instance = bullet.instance()
+		# zuerst in den baum, dann gloable werte anpassbar
+		get_parent().get_parent().add_child(instance)
 		if side == 0:
 			instance.set_global_position($projectile/spawn_left.get_global_position())
 			$muzzleflash/left.visible = true
@@ -28,7 +30,7 @@ func _physics_process(delta):
 			$muzzleflash/right.visible = true
 			side = (side + 1) % GUN_COUNT
 		$sound.play()
-		get_parent().get_parent().add_child(instance)
+		#get_parent().get_parent().add_child(instance)
 		
 		time -= time_between_shoots
 	

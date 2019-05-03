@@ -12,7 +12,7 @@ func _physics_process(delta):
 	
 	var tmp_turning_speed = turning_speed * delta
 	var turn_by = heading.angle_to(to_target) #distance to turn
-	print(turn_by)
+	#print(turn_by)
 	if turn_by > tmp_turning_speed :
 		turn_by = tmp_turning_speed
 	elif turn_by < -tmp_turning_speed :

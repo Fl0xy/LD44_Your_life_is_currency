@@ -19,8 +19,9 @@ func fire_rocket():
 	
 	instance.target_global_position = global.player.get_global_position() #gamejam temporäre lösung
 	
+	get_parent().get_parent().add_child(instance) #vor dem setzten von globalen werte in den baum setzen
 	instance.set_global_position($projectile/spawn.get_global_position())
-	get_parent().get_parent().add_child(instance)
+	#get_parent().get_parent().add_child(instance)
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("blackProjectile"):
