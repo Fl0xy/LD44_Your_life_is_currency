@@ -4,6 +4,8 @@ export var target_global_position : Vector2 = Vector2(50, 50)
 export var speed = 30.0
 export var turning_speed = 1.0
 
+var explosion = preload("res://assets/enemys/explosion.tscn")
+
 var heading = Vector2(0, 1)
 
 func _physics_process(delta):
@@ -22,3 +24,11 @@ func _physics_process(delta):
 	heading = heading.rotated(turn_by)
 	
 	global_position += heading * delta * speed
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("blackProjectile"):
+		#destroy
+		var node = explosion.instance()
+		get_parent().add_child(node)
+		node.global_position = global_position
+		queue_free()

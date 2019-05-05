@@ -21,9 +21,11 @@ position = Vector2( 56, 178 )
 [node name="waves" type="Node2D" parent="."]
 
 [node name="wave1" type="Node2D" parent="waves"]
+editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="wave" type="Node2D" parent="waves/wave1"]
+editor/display_folded = true
 
 [node name="EnemySpawnerGS" parent="waves/wave1/wave" instance=ExtResource( 5 )]
 position = Vector2( 93.9189, 18.614 )
@@ -51,6 +53,7 @@ one_shot = true
 autostart = true
 
 [node name="wave2" type="Node2D" parent="waves"]
+editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="wave" type="Node2D" parent="waves/wave2"]
@@ -90,6 +93,7 @@ enemy_scene = ExtResource( 7 )
 [node name="EnemySpawnerR" parent="waves/wave3/wave" instance=ExtResource( 5 )]
 position = Vector2( 101.56, -61.7948 )
 enemy_scene = ExtResource( 8 )
+direction = Vector2( 0, 1 )
 
 [node name="EnemySpawnerR2" parent="waves/wave3/wave" instance=ExtResource( 5 )]
 position = Vector2( 101.56, -61.7948 )
@@ -120,7 +124,6 @@ direction = Vector2( -2, 0 )
 wait_time = 15.0
 one_shot = true
 autostart = true
-
 [connection signal="timeout" from="waves/wave1/Timer" to="waves/wave1" method="_on_Timer_timeout"]
 [connection signal="timeout" from="waves/wave2/Timer" to="waves/wave2" method="_on_Timer_timeout"]
 [connection signal="timeout" from="waves/wave3/Timer" to="waves/wave3" method="_on_Timer_timeout"]
